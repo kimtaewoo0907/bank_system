@@ -1,8 +1,8 @@
-package com.example.bank_system.member.controller;
+package com.example.bank_system.controller;
 
-import com.example.bank_system.member.domain.Member;
-import com.example.bank_system.member.domain.MemberDto;
-import com.example.bank_system.member.service.MemberService;
+import com.example.bank_system.domain.Member;
+import com.example.bank_system.domain.MemberDto;
+import com.example.bank_system.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +17,7 @@ public class MemberController {
     @Autowired
     MemberService memberService;
 
-    @PostMapping("/test")
+    @PostMapping("member/create")
     @ResponseBody
     public String createMember(@RequestBody MemberDto memberDto) throws SQLException {
         Member member1 = Member.builder()
@@ -30,5 +30,12 @@ public class MemberController {
         return "ok";
     }
 
+    @PostMapping("send/money")
+    @ResponseBody
+    public String sendMoney() {
+        // 송금할 화폐 선택
+
+        return "ok";
+    }
 
 }

@@ -1,9 +1,10 @@
-package com.example.bank_system.member.domain;
+package com.example.bank_system.domain;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -32,7 +33,8 @@ public class Member {
     @Column(name = "file", columnDefinition = "varchar(255) default 'N'")
     private String file;
 
-    @Column
+    // 자동 날짜 생성 어노테이션
+    @CreatedDate
     private LocalDateTime createDate;
 
     @Builder

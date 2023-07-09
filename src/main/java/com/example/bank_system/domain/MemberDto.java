@@ -1,4 +1,4 @@
-package com.example.bank_system.member.domain;
+package com.example.bank_system.domain;
 
 import lombok.Getter;
 import lombok.Setter;
